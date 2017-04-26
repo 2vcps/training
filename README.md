@@ -1,4 +1,4 @@
-Training modules from Pure NewStack
+Training modules from Pure NewStack (or whatever)
 ================================
 
 Welcome to the official training modules from the NewStack team.  Here we will maintain all of our training material that we build ranging from general 101 level topics through advanced hands on workshops.
@@ -20,6 +20,7 @@ Github|Twitter
 [@Pure](https://github.com/purestorage)|[Craig Chapman](https://twitter.com/virtualchappy)
 
 ## Orginal creators
+-----------|-----
 [@jrosland](https://github.com/jonasrosland)|[Jonas Rosland](https://twitter.com/jonasrosland)
 [@mcowger](https://github.com/mcowger)|[Matt Cowger](https://twitter.com/mcowger)
 [@kacole2](https://github.com/kacole2)|[Kendrick Coleman](https://twitter.com/kendrickcoleman)
