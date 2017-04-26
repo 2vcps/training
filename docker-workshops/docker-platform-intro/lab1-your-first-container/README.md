@@ -25,23 +25,12 @@ Let's set up our first container host!
 Install the Docker CE (Community Edition) Engine and make sure it starts.
 Windows
 ![inline](screenshot-docker-win.PNG)
+
 Mac
 ![inline](Screenshot2017-04-2614.47.45.png)
 Check for the Moby icon in your system tray.
 
 You now have a container host (your laptop) ready to use, let's make sure we can connect to it.
-
-```
-$ docker-machine env containerhost
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.99.101:2376"
-export DOCKER_CERT_PATH="/Users/jonas/.docker/machine/machines/containerhost"
-export DOCKER_MACHINE_NAME="containerhost"
-# Run this command to configure your shell:
-# eval "$(docker-machine env containerhost)"
-```
-
-Now copy & paste either the `export` lines, or run the `eval` command. Both will make sure your shell is correctly configured to connect to the correct container host.
 
 ## Using Docker
 
@@ -106,7 +95,7 @@ steeef/sensu-centos                   Sensu server on CentOS 6.x Forked from htt
 sstarcher/sensu-docker                                                                0                    [OK]
 ```
 
-Try some other searches, like for redis, apache, nginx, mysql, postgresql, you name it, try to see if there are Docker images out there. Make note though that currently there are only linux applications and services out there. If you find an application or service that's not on the Docker hub, perhaps you could create one and be the first!
+Try some other searches, like for redis, apache, nginx, mysql, postgresql, alpine, ubuntu you name it, try to see if there are Docker images out there. Make note that any Windows services have to run on a machine with a Windows kernel, aka Windows 10 or 2016. If you are on a windows machine try seeing how you can switch from Linux based containers to windows containers. If you find an application or service that's not on the Docker hub, perhaps you could create one and be the first! Community FTW!
 
 Now let's try to download an image using the `docker pull` command:
 
@@ -193,30 +182,11 @@ If you have problems with your client there are likely two issues.
 1. Check that you can reach the container host by checking the IP with `ping $(docker-machine ip containerhost)`.  If this doesn't work then you probably need to add a route for the `192.168.99.x` traffic to the proper VBoxNet interface.  This issue is usually caused by Cisco VPN so make sure you're disconnected from the VPN and some times a proper restart is needed.  Run an `ifconfig` to identify which is the proper interface and then run ```sudo route -n add -net 192.168.99.0/24 -interface vboxnetX``` for the proper interface.
 >As a side note, you can communicate to the container host via a `NAT` and `BRIDGED` method.  The `NAT` method means that you can leverage the `127.0.0.1` address of your laptop and it forwards appropriate ports to a static IP of your container host.  The method we are using for this workshop is the `BRIDGED` mode and uses a `routed` IP.
 
-2. You probably haven't set the environment variables correctly. See [Lab setup verification](#lab-setup-verification)
-
-### For EMC employees only
-
-If you have a problem when running `docker run` or `docker pull` where it hangs when pulling docker image layers and you are inside the EMC corporate network, it is likely that you are running into SSL certificate errors and trust issues between the Docker daemon and the public Docker Hub/CDN.  For this you must download our SSL certificate and place it inside the container host.
-
-- Open `http://gso.corp.emc.com/installupdatedcerts.aspx` and Download `EMCs SSL Decryption` certificate.
-- Open the file in a text editor and copy the contents
-- Run `docker-machine ssh containerhost` to SSH into the container host
-- Stop Docker by running `sudo /etc/init.d/docker stop`
-- In the Docker container host, create a new file and copy the `EMC SSL.cer` contents into it by running `vi EMC_SSL.cer`, press `i` to be able to insert text, paste the contents you copied above, then press `:wq` to write the file and quit the text editor
-- Convert the certificate to a PEM file with `openssl x509 -in EMC_SSL.cer -out EMC_SSL.pem`
-- Update the CA certificates files to include this certificate with `cat EMC_SSL.pem | sudo tee -a /etc/ssl/certs/ca-certificates.crt`
-- Start the Docker daemon services again with ```sudo /etc/init.d/docker start```
-- Verify that you can still connect to the Docker engine by running `docker version` and then verify that you can download images by doing `docker pull redis`
 
 #### General Troubleshooting
 One way to troubleshoot is to run the Docker daemon manually to see the logs in real-time.  
-
-1. Make to sure SSH to the container host with ```docker-machine ssh containerhost```.
-2. Get the command that we run the Docker daemon with by running ```ps auxfw | grep docker```.  
-3. Stop the Docker daemon with ```/etc/init.d/docker stop```.  
-4. Manually run the Docker daemon with the command you found from ```ps``` which should be something similar to ```/usr/local/bin/docker -d -D -g /var/lib/docker -H unix:// -H tcp://0.0.0.0:2376 --tlsverify --tlscacert=/var/lib/boot2docker/tls/ca.pem --tlscert=/var/lib/boot2docker/tls/server.pem --tlskey=/var/lib/boot2docker/tls/serverkey.pem```.
-5. Make sure to leave this process ```running``` and open another window for other operations.
+1. Manually run the Docker daemon with the command you found from ```ps``` which should be something similar to ```/usr/local/bin/docker -d -D -g /var/lib/docker -H unix:// -H tcp://0.0.0.0:2376 --tlsverify --tlscacert=/var/lib/boot2docker/tls/ca.pem --tlscert=/var/lib/boot2docker/tls/server.pem --tlskey=/var/lib/boot2docker/tls/serverkey.pem```.
+2. Make sure to leave this process ```running``` and open another window for other operations.
 
 
 If docker-machine is hung on "starting vm..." and you're on a Mac, it might be due to a conflict with Kitematic (if you have it installed). Steps to resolve:

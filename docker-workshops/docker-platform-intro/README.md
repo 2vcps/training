@@ -9,12 +9,12 @@ So, if you're new to Docker and looking for a great introduction, this will is a
 
 **Prerequisites:**
 
-Use your own laptop with The Docker Toolbox (https://www.docker.com/toolbox) installed.
+Use your own laptop with The Docker CE (https://store.docker.com) installed.
 
 ### Agenda:
 
 #### Part I: Introduction to Docker
- - Overview, 1h, [presentation here](http://www.slideshare.net/jonasrosland/docker-and-containers-overview-docker-workshop)
+ - Overview, 1h, [presentation here](link to presentation)
  - Docker ecosystem, 20 min
   - Network
   - Storage

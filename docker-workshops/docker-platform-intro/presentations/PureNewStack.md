@@ -1,7 +1,7 @@
 # Pure NewStack introduction
 
 ### Jon Owings
-### Chief Cloud Nerd
+### DevOps and New Stack Principal Engineer
 #### @jon_2vcps
 #### owings@purestorage.com
 #### code.purestorage.com / github.com/2vcps
