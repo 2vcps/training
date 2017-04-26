@@ -23,11 +23,13 @@ Let's set up our first container host!
 
 
 Install the Docker CE (Community Edition) Engine and make sure it starts.
-
+Windows
 ![inline](screenshot-docker-win.PNG)
+Mac
+![inline](Screenshot2017-04-2614.47.45.png)
+Check for the Moby icon in your system tray.
 
-
-You now have a container host ready to use, let's make sure we can connect to it.
+You now have a container host (your laptop) ready to use, let's make sure we can connect to it.
 
 ```
 $ docker-machine env containerhost
