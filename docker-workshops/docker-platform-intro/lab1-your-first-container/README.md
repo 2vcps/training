@@ -23,7 +23,10 @@ Let's set up our first container host!
 
 ```
 Install the Docker CE (Community Edition) Engine and make sure it starts.
-![inline](screenshot-docker-win.png)
+
+![inline](screenshot-docker-win.PNG)
+
+
 You now have a container host ready to use, let's make sure we can connect to it.
 
 ```
