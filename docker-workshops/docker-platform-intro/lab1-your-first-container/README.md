@@ -21,7 +21,7 @@ Docker Machine will create a virtual machine for us where we can run our docker 
 
 Let's set up our first container host!
 
-```
+
 Install the Docker CE (Community Edition) Engine and make sure it starts.
 
 ![inline](screenshot-docker-win.PNG)
