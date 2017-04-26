@@ -46,16 +46,17 @@
 ---
 
 # Pure Openconnect github goes here
+[OpenConnect](https://github.com/PureStorage-OpenConnect)
 
 ---
 
 ## Contact
+Github|Twitter
+-----------|-----
+[@2vcps](https://github.com/2vcps)|[Jon Owings](https://twitter.com/jon_2vcps)
+[@PureOpenConnect](https://github.com/purestorage)|[Craig Chapman](https://twitter.com/virtualchappy)
 
-@jon_2vcps
-@virtualchappy
-@simon
-
-newstack@purestorage.com
+xxx@purestorage.com
 
 \#NewStack on Slack
 -that rhymes so it must be awesome.
