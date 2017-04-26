@@ -22,15 +22,8 @@ Docker Machine will create a virtual machine for us where we can run our docker 
 Let's set up our first container host!
 
 ```
-##Update this section
-$ docker-machine create --driver virtualbox containerhost
-Creating VirtualBox VM...
-Creating SSH key...
-Starting VirtualBox VM...
-Starting VM...
-To see how to connect Docker to this machine, run: docker-machine env containerhost
-```
-
+Install the Docker CE (Community Edition) Engine and make sure it starts.
+![inline](screenshot-docker-win.png)
 You now have a container host ready to use, let's make sure we can connect to it.
 
 ```

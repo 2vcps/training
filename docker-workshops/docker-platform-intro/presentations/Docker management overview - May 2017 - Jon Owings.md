@@ -14,7 +14,7 @@
 Different types of management
 
 **Developer-focused:**
-- Fig
+- Fig (now compose)
 - Panamax
 
 **Ops-focused:**
