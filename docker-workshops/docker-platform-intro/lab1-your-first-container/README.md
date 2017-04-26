@@ -9,8 +9,11 @@ In this lab you'll get to know how to use the Docker Machine tool, how to search
 
 Verify that you have the following software installed:
 
-1. A 64-bit OS
-2. [Docker Toolbox](https://www.docker.com/toolbox)
+1. A 64-bit OS (Docker for Windows requires Windows 10 Professional)
+2. [Docker CE](https://store.docker.com/search?offering=community&platform=desktop&q=&type=edition)
+Select your OS, this will guide you through downloading and installing on Windows or
+Please select stable as the distro you will use.
+If you feel your advanced you can select edge but expect outputs to differ from what we build.
 
 (Sidenote: If you want to get into managing your apps in a more interesting way have a look at [Homebrew](http://brew.sh/) and [Homebrew Cask](http://caskroom.io/) for OS X, and [Chocolatey for Windows](https://chocolatey.org/packages/docker).)
 
@@ -19,6 +22,7 @@ Docker Machine will create a virtual machine for us where we can run our docker 
 Let's set up our first container host!
 
 ```
+##Update this section
 $ docker-machine create --driver virtualbox containerhost
 Creating VirtualBox VM...
 Creating SSH key...
@@ -88,7 +92,7 @@ Here we can see how many images we have downloaded,  how many containers we have
 
 The second command we'll look at is searching for images that we find interesting.
 
-The [Docker hub](https://hub.docker.com) currently has approximately **75000** images available for everyone to use freely.
+The [Docker hub](https://hub.docker.com) currently has approximately **100,000+** images available for everyone to use freely.
 
 Try a search for Sensu, a [really cool monitoring solution](http://sensuapp.org):
 

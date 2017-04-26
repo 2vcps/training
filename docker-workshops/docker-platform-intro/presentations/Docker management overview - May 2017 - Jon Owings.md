@@ -1,11 +1,11 @@
 # Docker management overview
 
-### Jonas Rosland
-### Developer Advocate
-#### @jonasrosland
-#### jonas.rosland@emc.com
-#### emccode.github.io
-#### April 2015
+### Jon Owings
+### Chief Cloud Nerd
+#### @jon_2vcps
+#### owings@purestorage.com
+#### code.purestorage.com / github.com/2vcps
+#### May 2017
 
 ^ Run this presentation with [Deckset](http://www.decksetapp.com/)
 
